@@ -1,0 +1,19 @@
+Single Responsibilty states that a class should do only one thing and it must have 
+single reason to change.
+
+It means that if there is a class or a module which is responsible to perform certain 
+task then it shouldn't do another task which is irrelevant to the class or module.
+
+For instance let say we have a class named Book which has attributes related to Book
+like author, release date, price etc. Similarly we have a class named Invoice which
+is responsible for generating invoices of the books purchased from the store after
+calculating the price along with discount and GST. 
+
+This Invoice class has methods such as calculateInvoice, printInvoice and saveInvoice.
+As we can see that this class is doing extra task of printing and saving invoice, due 
+to which if there is a change in printing and saving logic of invoice then also we 
+have to change the Invoice class and thus it violates Single Responsibilty Principle.
+
+To make it follow the principle, we must create a separate class for printing and 
+saving invoices and can use that classes object in Invoice class to print and save 
+invoices.

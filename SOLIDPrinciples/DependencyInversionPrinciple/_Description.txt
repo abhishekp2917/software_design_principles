@@ -1,0 +1,19 @@
+Dependency Inversion principle states that high level module should not depend upon 
+low level module but both should depend upon abstraction and abstraction shouldn't
+depend upon details but details should depend upon abstraction.
+
+It means that if there is a concrete classA which is dependent upon another concrete
+classB then it would make the system tightly coupled and if we want to test classA it 
+would become more difficult. Instead, we can do is that we can make an abstract class
+which will be extended by classB so that concretion will depend upon abstraction and 
+we will use that abstract class reference in classA to access classB. In this way 
+classA and classB both will depend upon abstraction.
+
+For instance we have a bookstore and to purchase a book we have to make a payment 
+using stripe payment gateway so we used StripePayment class inside BookStore to 
+carry out payment operation but later on we decided to introduce another payment
+method in out store, say paypal, then we need to change the entire code since our 
+Bookstore class is tightly coupled with StripePayment class. To solve this, we can
+make an interface called PaymentProcessor which will be extended by StripePayment and 
+PaypalPayment and we can use PaymentProcessor refernce inside BookStore class to 
+do payment.

@@ -1,0 +1,22 @@
+Open Closed principle states that a class should be open for extension but closed for 
+modification.
+
+It means that we can add more functionality to the class without modifying the 
+existing code as this might create bugs in well tested production ready code.
+
+For instance in our Solid Design principle example1 we were calculating invoice but
+now we want to calculate invoices based on the customer type. Let say we have a 
+customer having silver card which gets extra discount and then there is normal 
+customer which gets normal discount.
+
+In this case we will build our logic and implement it by using if-else, but if in
+future we intoduce a new customer type, say gold card customer whose invoice 
+calculation will have different logic then we have to modify the existing code for 
+calculating invoices. This violates Open Closed principle.
+
+To make this follow Open Closed principle we can make classes for each customer type
+and delegate the calculating the invoices to that class method only, say calculate, 
+and based on customer type we will call calculate method of that class and will get 
+the desired implementation to calculate invoice. In this way the code will follow
+Single Responsibilty principle.
+

@@ -1,0 +1,8 @@
+Liskov Substitution states that if classB is subtype of classA then classB should be 
+substitutable inplace of classA.
+
+It means that if at some place we are using object of classA then but replacing it 
+with object of classB shouldn't give wired result and our program must run as usual 
+like before substitution.
+
+For instance we have a class animal which has method  

@@ -1,0 +1,16 @@
+Interface Segregation principle states that a class should be forced to implement 
+a method that it doesn't need or it doesn't make any sense in the class context.
+
+It means that if a class implements an interface then that class should be forced to 
+implement any method that that implementing class doesn't need or that method doesn't 
+make sense for that class.
+
+For instance if we have an animal interface with methods eat, speak, fly, swim and 
+concrete class that implements that interface are cat and parrot then we can observe 
+that cat doesn't need fly method as it is irrelevant for it. Similarly, parrot class
+doesn't need swim method as parrot can't swim.
+
+To make this code relevant, we have to segregate the interface into two other
+interface which will extend Animal interface, say FlyableAnimals which have fly 
+method and NonFlyableAnimals which have swim method, where cat will implement 
+NonFlyableAnimals interface while parrot will implement FlyableAnimals interface.
